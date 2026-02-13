@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <!-- Purple and White Color Scheme -->
+    <color name="purple_50">#FFF3E5F5</color>
+    <color name="purple_100">#FFE1BEE7</color>
+    <color name="purple_200">#FFCE93D8</color>
+    <color name="purple_300">#FFBA68C8</color>
+    <color name="purple_400">#FFAB47BC</color>
+    <color name="purple_500">#FF9C27B0</color>
+    <color name="purple_600">#FF8E24AA</color>
+    <color name="purple_700">#FF7B1FA2</color>
+    <color name="purple_800">#FF6A1B9A</color>
+    <color name="purple_900">#FF4A148C</color>
+    
+    <!-- White and Light Colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_light">#FFFEFEFE</color>
+    <color name="white_dimmed">#FFF5F5F5</color>
+    
+    <!-- Accent Colors -->
+    <color name="purple_accent">#FFE91E63</color>
+    <color name="purple_accent_light">#FFFF80AB</color>
+    
+    <!-- Background Colors -->
+    <color name="background_primary">#FFFFFFFF</color>
+    <color name="background_secondary">#FFF3E5F5</color>
+    <color name="background_card">#FFFFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FF212121</color>
+    <color name="text_secondary">#FF757575</color>
+    <color name="text_on_purple">#FFFFFFFF</color>
+    
+    <!-- Border and Divider Colors -->
+    <color name="divider">#FFE0E0E0</color>
+    <color name="border_purple">#FFCE93D8</color>
+    
+    <!-- Legacy Colors (kept for compatibility) -->
+    <color name="black">#FF000000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>

@@ -6,4 +6,103 @@
     <string name="settings_continuous_listening">Continuous Listening</string>
     <string name="settings_smart_accessories">Smart Accessories</string>
     <string name="settings_outgoing_texts">Monitor Outgoing Texts</string>
+    
+    <!-- Medical Information Labels -->
+    <string name="medical_name">Name</string>
+    <string name="medical_age">Age</string>
+    <string name="medical_date_of_birth">Date of Birth</string>
+    <string name="medical_sex">Sex</string>
+    <string name="medical_hand_dominance">Hand Dominance</string>
+    <string name="medical_blood_type">Blood Type</string>
+    <string name="medical_allergies">Allergies</string>
+    <string name="medical_medications">Current Medications</string>
+    <string name="medical_medical_history">Medical History</string>
+    <string name="medical_family_history">Family History</string>
+    <string name="medical_emergency_contact">Emergency Contact</string>
+    <string name="medical_emergency_contact_phone">Emergency Contact Phone</string>
+    <string name="medical_primary_care_physician">Primary Care Physician</string>
+    <string name="medical_physician_phone">Physician Phone Number</string>
+    <string name="medical_insurance_provider">Insurance Provider</string>
+    <string name="medical_insurance_policy_number">Insurance Policy Number</string>
+    <string name="medical_conditions">Medical Conditions</string>
+    <string name="medical_cognitive_assessment_date">Last Cognitive Assessment Date</string>
+    <string name="medical_diagnosis_date">Alzheimer\'s Diagnosis Date</string>
+    <string name="medical_stage">Disease Stage</string>
+    <string name="medical_notes">Additional Notes</string>
+    
+    <!-- Hand Dominance Options -->
+    <string name="hand_dominance_right">Right</string>
+    <string name="hand_dominance_left">Left</string>
+    <string name="hand_dominance_ambidextrous">Ambidextrous</string>
+    
+    <!-- Sex Options -->
+    <string name="sex_male">Male</string>
+    <string name="sex_female">Female</string>
+    <string name="sex_other">Other</string>
+    <string name="sex_prefer_not_to_say">Prefer not to say</string>
+    
+    <!-- Medical History Labels -->
+    <string name="history_title">Medical History</string>
+    <string name="history_subtitle">Select all that apply to you</string>
+    
+    <!-- Cardiovascular Conditions -->
+    <string name="history_hypertension">Hypertension (High Blood Pressure)</string>
+    <string name="history_heart_disease">Heart Disease</string>
+    <string name="history_stroke">Stroke</string>
+    <string name="history_heart_attack">Heart Attack</string>
+    <string name="history_atrial_fibrillation">Atrial Fibrillation</string>
+    <string name="history_coronary_artery_disease">Coronary Artery Disease</string>
+    
+    <!-- Neurological Conditions -->
+    <string name="history_head_injury">Head Injury or Traumatic Brain Injury</string>
+    <string name="history_seizures">Seizures or Epilepsy</string>
+    <string name="history_parkinsons">Parkinson\'s Disease</string>
+    <string name="history_multiple_sclerosis">Multiple Sclerosis</string>
+    
+    <!-- Metabolic Conditions -->
+    <string name="history_diabetes">Diabetes (Type 1 or Type 2)</string>
+    <string name="history_obesity">Obesity</string>
+    <string name="history_high_cholesterol">High Cholesterol</string>
+    <string name="history_metabolic_syndrome">Metabolic Syndrome</string>
+    
+    <!-- Mental Health Conditions -->
+    <string name="history_depression">Depression</string>
+    <string name="history_anxiety">Anxiety Disorders</string>
+    <string name="history_bipolar">Bipolar Disorder</string>
+    <string name="history_schizophrenia">Schizophrenia</string>
+    <string name="history_ptsd">Post-Traumatic Stress Disorder (PTSD)</string>
+    
+    <!-- Sleep Disorders -->
+    <string name="history_sleep_apnea">Sleep Apnea</string>
+    <string name="history_insomnia">Chronic Insomnia</string>
+    <string name="history_sleep_disorders">Other Sleep Disorders</string>
+    
+    <!-- Other Medical Conditions -->
+    <string name="history_thyroid_disease">Thyroid Disease</string>
+    <string name="history_kidney_disease">Kidney Disease</string>
+    <string name="history_liver_disease">Liver Disease</string>
+    <string name="history_cancer">Cancer</string>
+    <string name="history_arthritis">Arthritis</string>
+    <string name="history_osteoporosis">Osteoporosis</string>
+    <string name="history_vision_problems">Vision Problems</string>
+    <string name="history_hearing_loss">Hearing Loss</string>
+    
+    <!-- Family History -->
+    <string name="history_family_alzheimers">Family History of Alzheimer\'s Disease</string>
+    <string name="history_family_dementia">Family History of Dementia</string>
+    <string name="history_family_diabetes">Family History of Diabetes</string>
+    <string name="history_family_heart_disease">Family History of Heart Disease</string>
+    <string name="history_family_stroke">Family History of Stroke</string>
+    
+    <!-- Lifestyle Factors -->
+    <string name="history_smoking">History of Smoking</string>
+    <string name="history_alcohol_abuse">History of Alcohol Abuse</string>
+    <string name="history_drug_abuse">History of Drug Abuse</string>
+    <string name="history_sedentary_lifestyle">Sedentary Lifestyle</string>
+    
+    <!-- Other Relevant Conditions -->
+    <string name="history_down_syndrome">Down Syndrome</string>
+    <string name="history_mild_cognitive_impairment">Mild Cognitive Impairment (MCI)</string>
+    <string name="history_vascular_dementia">Vascular Dementia</string>
+    <string name="history_other">Other Medical Conditions</string>
 </resources>
