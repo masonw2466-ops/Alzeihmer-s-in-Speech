@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Alzeihmer\'s App</string>
+    
+    <!-- Settings Labels -->
+    <string name="settings_monitor_phone_calls">Monitor Phone Calls</string>
+    <string name="settings_continuous_listening">Continuous Listening</string>
+    <string name="settings_smart_accessories">Smart Accessories</string>
+    <string name="settings_outgoing_texts">Monitor Outgoing Texts</string>
 </resources>
