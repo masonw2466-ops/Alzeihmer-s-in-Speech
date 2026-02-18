@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_primary"
+    android:orientation="vertical"
     android:padding="24dp"
     tools:context=".HistoryActivity">
 
@@ -15,10 +15,7 @@
         android:text="@string/history_title"
         android:textColor="@color/purple_700"
         android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvHistorySubtitle"
@@ -27,27 +24,74 @@
         android:layout_marginTop="8dp"
         android:text="@string/history_subtitle"
         android:textColor="@color/text_secondary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHistoryTitle" />
+        android:textSize="16sp" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHistorySubtitle">
+        android:layout_weight="1"
+        android:layout_marginTop="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- History checkboxes will be added here -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Cardiovascular" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_hypertension" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_hypertension" />
+            <CheckBox android:id="@+id/check_heart_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_heart_disease" />
+            <CheckBox android:id="@+id/check_stroke" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_stroke" />
+            <CheckBox android:id="@+id/check_heart_attack" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_heart_attack" />
+            <CheckBox android:id="@+id/check_atrial_fibrillation" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_atrial_fibrillation" />
+            <CheckBox android:id="@+id/check_coronary_artery_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_coronary_artery_disease" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Neurological" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_head_injury" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_head_injury" />
+            <CheckBox android:id="@+id/check_seizures" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_seizures" />
+            <CheckBox android:id="@+id/check_parkinsons" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_parkinsons" />
+            <CheckBox android:id="@+id/check_multiple_sclerosis" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_multiple_sclerosis" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Metabolic" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_diabetes" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_diabetes" />
+            <CheckBox android:id="@+id/check_obesity" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_obesity" />
+            <CheckBox android:id="@+id/check_high_cholesterol" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_high_cholesterol" />
+            <CheckBox android:id="@+id/check_metabolic_syndrome" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_metabolic_syndrome" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Mental Health" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_depression" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_depression" />
+            <CheckBox android:id="@+id/check_anxiety" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_anxiety" />
+            <CheckBox android:id="@+id/check_bipolar" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_bipolar" />
+            <CheckBox android:id="@+id/check_schizophrenia" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_schizophrenia" />
+            <CheckBox android:id="@+id/check_ptsd" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_ptsd" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Sleep Disorders" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_sleep_apnea" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_sleep_apnea" />
+            <CheckBox android:id="@+id/check_insomnia" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_insomnia" />
+            <CheckBox android:id="@+id/check_sleep_disorders" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_sleep_disorders" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Other Medical Conditions" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_thyroid_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_thyroid_disease" />
+            <CheckBox android:id="@+id/check_kidney_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_kidney_disease" />
+            <CheckBox android:id="@+id/check_liver_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_liver_disease" />
+            <CheckBox android:id="@+id/check_cancer" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_cancer" />
+            <CheckBox android:id="@+id/check_arthritis" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_arthritis" />
+            <CheckBox android:id="@+id/check_osteoporosis" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_osteoporosis" />
+            <CheckBox android:id="@+id/check_vision_problems" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_vision_problems" />
+            <CheckBox android:id="@+id/check_hearing_loss" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_hearing_loss" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Family History" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_family_alzheimers" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_family_alzheimers" />
+            <CheckBox android:id="@+id/check_family_dementia" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_family_dementia" />
+            <CheckBox android:id="@+id/check_family_diabetes" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_family_diabetes" />
+            <CheckBox android:id="@+id/check_family_heart_disease" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_family_heart_disease" />
+            <CheckBox android:id="@+id/check_family_stroke" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_family_stroke" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Lifestyle" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_smoking" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_smoking" />
+            <CheckBox android:id="@+id/check_alcohol_abuse" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_alcohol_abuse" />
+            <CheckBox android:id="@+id/check_drug_abuse" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_drug_abuse" />
+            <CheckBox android:id="@+id/check_sedentary_lifestyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_sedentary_lifestyle" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Other" android:textColor="@color/purple_700" android:textSize="16sp" android:textStyle="bold" />
+            <CheckBox android:id="@+id/check_down_syndrome" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_down_syndrome" />
+            <CheckBox android:id="@+id/check_mild_cognitive_impairment" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_mild_cognitive_impairment" />
+            <CheckBox android:id="@+id/check_vascular_dementia" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_vascular_dementia" />
+            <CheckBox android:id="@+id/check_other" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/history_other" />
 
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

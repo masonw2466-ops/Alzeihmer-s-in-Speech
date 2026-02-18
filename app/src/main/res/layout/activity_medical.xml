@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_primary"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MedicalActivity">
 
@@ -15,27 +15,84 @@
         android:text="Medical Information"
         android:textColor="@color/purple_700"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMedicalTitle">
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Medical information fields will be added here -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_name" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName" android:hint="@string/medical_name" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_age" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_age" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="@string/medical_age" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_date_of_birth" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_dob" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="date" android:hint="@string/medical_date_of_birth" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_sex" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_sex" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_sex" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_hand_dominance" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_hand_dominance" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_hand_dominance" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_blood_type" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_blood_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_blood_type" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_allergies" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_allergies" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="2" android:hint="@string/medical_allergies" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_medications" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_medications" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="2" android:hint="@string/medical_medications" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_medical_history" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_medical_history" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="2" android:hint="@string/medical_medical_history" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_family_history" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_family_history" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="2" android:hint="@string/medical_family_history" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_emergency_contact" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_emergency_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName" android:hint="@string/medical_emergency_contact" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_emergency_contact_phone" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_emergency_contact_phone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:hint="@string/medical_emergency_contact_phone" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_primary_care_physician" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_physician" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName" android:hint="@string/medical_primary_care_physician" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_physician_phone" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_physician_phone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:hint="@string/medical_physician_phone" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_insurance_provider" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_insurance_provider" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_insurance_provider" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_insurance_policy_number" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_insurance_policy" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_insurance_policy_number" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_conditions" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_conditions" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="2" android:hint="@string/medical_conditions" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_cognitive_assessment_date" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_cognitive_assessment_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="date" android:hint="@string/medical_cognitive_assessment_date" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_diagnosis_date" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_diagnosis_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="date" android:hint="@string/medical_diagnosis_date" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_stage" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_stage" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:hint="@string/medical_stage" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medical_notes" android:textColor="@color/text_primary" android:textSize="14sp" />
+            <EditText android:id="@+id/edit_notes" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:minLines="3" android:hint="@string/medical_notes" android:layout_marginBottom="16dp" />
 
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
