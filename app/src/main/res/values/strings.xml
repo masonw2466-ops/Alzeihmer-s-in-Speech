@@ -105,4 +105,10 @@
     <string name="history_mild_cognitive_impairment">Mild Cognitive Impairment (MCI)</string>
     <string name="history_vascular_dementia">Vascular Dementia</string>
     <string name="history_other">Other Medical Conditions</string>
+
+    <!-- Bottom Navigation Labels -->
+    <string name="nav_main">Main</string>
+    <string name="nav_medical">Medical</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
 </resources>

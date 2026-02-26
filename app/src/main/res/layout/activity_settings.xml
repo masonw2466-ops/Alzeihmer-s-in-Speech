@@ -60,4 +60,65 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nav_bar_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nav_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/nav_main"
+            android:textColor="@color/nav_item_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_item_background" />
+
+        <TextView
+            android:id="@+id/nav_medical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/nav_medical"
+            android:textColor="@color/nav_item_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_item_background" />
+
+        <TextView
+            android:id="@+id/nav_history"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/nav_history"
+            android:textColor="@color/nav_item_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_item_background" />
+
+        <TextView
+            android:id="@+id/nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/nav_settings"
+            android:textColor="@color/nav_item_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_item_background"
+            android:selected="true" />
+    </LinearLayout>
+
 </LinearLayout>
