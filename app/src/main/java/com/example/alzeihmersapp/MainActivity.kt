@@ -11,6 +11,7 @@ import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.alzeihmersapp.speech.SpeechTranscriptionManager
 import com.example.alzeihmersapp.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -22,6 +23,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel.setTranscriptionManager(SpeechTranscriptionManager(this))
 
         val recordButton: Button = findViewById(R.id.button_record)
         val viewRecordingsButton: Button = findViewById(R.id.button_view_recordings)

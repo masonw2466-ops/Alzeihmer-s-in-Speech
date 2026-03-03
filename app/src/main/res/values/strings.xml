@@ -106,6 +106,12 @@
     <string name="history_vascular_dementia">Vascular Dementia</string>
     <string name="history_other">Other Medical Conditions</string>
 
+    <!-- Transcript Labels -->
+    <string name="view_transcript">View Transcript</string>
+    <string name="transcript_title">Transcript</string>
+    <string name="transcript_not_found">Transcript not found.</string>
+    <string name="speech_recognition_unavailable">Speech recognition is not available on this device.</string>
+
     <!-- Bottom Navigation Labels -->
     <string name="nav_main">Main</string>
     <string name="nav_medical">Medical</string>
