@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.alzeihmersapp.speech.SpeechTranscriptionManager
+import com.example.alzeihmersapp.speech.AudioTranscriber
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -21,9 +21,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private var mediaRecorder: MediaRecorder? = null
     private var currentOutputFile: File? = null
 
-    private var transcriptionManager: SpeechTranscriptionManager? = null
-    private val transcriptBuilder = StringBuilder()
-
     private val recordingsDir: File by lazy {
         File(getApplication<Application>().filesDir, "recordings").apply {
             if (!exists()) mkdirs()
@@ -34,10 +31,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         File(getApplication<Application>().filesDir, "transcripts").apply {
             if (!exists()) mkdirs()
         }
-    }
-
-    fun setTranscriptionManager(manager: SpeechTranscriptionManager) {
-        transcriptionManager = manager
     }
 
     fun startRecording() {
@@ -66,30 +59,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
         currentOutputFile = outputFile
         _isRecording.value = true
-
-        transcriptBuilder.clear()
-        transcriptionManager?.start(object : SpeechTranscriptionManager.TranscriptionCallback {
-            override fun onFinalResult(text: String) {
-                if (transcriptBuilder.isNotEmpty()) {
-                    transcriptBuilder.append(" ")
-                }
-                transcriptBuilder.append(text)
-            }
-
-            override fun onTranscriptionError(errorCode: Int) {
-                Log.w(TAG, "Transcription error: $errorCode")
-            }
-        })
     }
 
     fun stopRecording() {
         if (_isRecording.value != true) return
 
-        transcriptionManager?.stop()
-
-        val transcriptText = transcriptBuilder.toString().trim()
         val outputFile = currentOutputFile
-
         val recorder = mediaRecorder ?: return
         var recordingSaved = true
         try {
@@ -104,12 +79,27 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             currentOutputFile = null
         }
 
-        if (recordingSaved && transcriptText.isNotEmpty() && outputFile != null) {
-            val transcriptFileName = outputFile.nameWithoutExtension + ".txt"
-            File(transcriptsDir, transcriptFileName).writeText(transcriptText)
-        }
-
         _isRecording.value = false
+
+        // Kick off background transcription if the recording was saved
+        if (recordingSaved && outputFile != null && outputFile.exists()) {
+            transcribeInBackground(outputFile)
+        }
+    }
+
+    private fun transcribeInBackground(audioFile: File) {
+        Thread {
+            Log.i(TAG, "Starting transcription for ${audioFile.name}")
+            val text = AudioTranscriber.transcribeFile(audioFile)
+            if (text != null) {
+                val transcriptFile = File(transcriptsDir,
+                    audioFile.nameWithoutExtension + ".txt")
+                transcriptFile.writeText(text)
+                Log.i(TAG, "Transcript saved: ${transcriptFile.name}")
+            } else {
+                Log.w(TAG, "Transcription returned no text for ${audioFile.name}")
+            }
+        }.start()
     }
 
     fun stopIfRecording() {
@@ -120,7 +110,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     override fun onCleared() {
         super.onCleared()
-        transcriptionManager?.stop()
         stopIfRecording()
     }
 

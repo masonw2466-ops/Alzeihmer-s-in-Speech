@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Alzeihmer\'s App</string>
+    <string name="app_name">Alzheimer\'s App</string>
     
     <!-- Settings Labels -->
     <string name="settings_monitor_phone_calls">Monitor Phone Calls</string>

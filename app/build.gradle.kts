@@ -39,6 +39,11 @@ android {
     buildFeatures {
         compose = true
     }
+
+    // Prevent Android from compressing Vosk model files in assets
+    androidResources {
+        noCompress += listOf("mdl", "fst", "conf", "mat", "dubm", "stats", "int")
+    }
 }
 
 dependencies {
@@ -47,6 +52,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
     implementation(libs.androidx.activity.compose)
+
+    // Vosk — offline speech recognition
+    implementation("com.alphacephei:vosk-android:0.3.47")
+    implementation("net.java.dev.jna:jna:5.13.0@aar")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)

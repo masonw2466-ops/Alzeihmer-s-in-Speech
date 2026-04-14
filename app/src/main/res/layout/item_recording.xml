@@ -24,6 +24,8 @@
         android:text="@string/view_transcript"
         android:textAllCaps="false"
         android:textColor="@color/purple_700"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
 </LinearLayout>

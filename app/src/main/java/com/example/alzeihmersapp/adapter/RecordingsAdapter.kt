@@ -30,12 +30,19 @@ class RecordingsAdapter(
         val transcriptFile = File(transcriptsDir, recording.nameWithoutExtension + ".txt")
         val hasTranscript = transcriptFile.exists()
 
-        transcriptButton.isEnabled = hasTranscript
-        transcriptButton.alpha = if (hasTranscript) 1.0f else 0.4f
+        if (hasTranscript) {
+            transcriptButton.text = context.getString(R.string.view_transcript)
+            transcriptButton.isEnabled = true
+            transcriptButton.alpha = 1.0f
+        } else {
+            transcriptButton.text = "Processing..."
+            transcriptButton.isEnabled = false
+            transcriptButton.alpha = 0.5f
+        }
 
         transcriptButton.setOnClickListener {
             if (hasTranscript) {
-                onViewTranscript(transcriptFile)
+                onViewTranscript(recording)
             }
         }
 
