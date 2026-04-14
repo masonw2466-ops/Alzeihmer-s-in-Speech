@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Alzeihmer\'s App</string>
+    <string name="app_name">Alzheimer\'s App</string>
     
     <!-- Settings Labels -->
     <string name="settings_monitor_phone_calls">Monitor Phone Calls</string>
@@ -105,6 +105,12 @@
     <string name="history_mild_cognitive_impairment">Mild Cognitive Impairment (MCI)</string>
     <string name="history_vascular_dementia">Vascular Dementia</string>
     <string name="history_other">Other Medical Conditions</string>
+
+    <!-- Transcript Labels -->
+    <string name="view_transcript">View Transcript</string>
+    <string name="transcript_title">Transcript</string>
+    <string name="transcript_not_found">Transcript not found.</string>
+    <string name="speech_recognition_unavailable">Speech recognition is not available on this device.</string>
 
     <!-- Bottom Navigation Labels -->
     <string name="nav_main">Main</string>

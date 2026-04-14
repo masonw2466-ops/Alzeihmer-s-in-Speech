@@ -4,13 +4,19 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.alzeihmersapp.speech.AudioTranscriber
 import com.example.alzeihmersapp.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -22,6 +28,19 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
+        // Load Vosk model in the background so it's ready when recording stops
+        AudioTranscriber.initModel(this,
+            onReady = { /* model loaded — transcription will work */ },
+            onError = { e ->
+                Log.e("MainActivity", "Vosk model init failed", e)
+                runOnUiThread {
+                    Toast.makeText(this,
+                        "Model error: ${e.javaClass.simpleName}: ${e.message}",
+                        Toast.LENGTH_LONG).show()
+                }
+            }
+        )
 
         val recordButton: Button = findViewById(R.id.button_record)
         val viewRecordingsButton: Button = findViewById(R.id.button_view_recordings)
@@ -50,7 +69,31 @@ class MainActivity : ComponentActivity() {
             startActivity(Intent(this, RecordingsActivity::class.java))
         }
 
+        updateRecordingInfo()
         setupBottomNav()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateRecordingInfo()
+    }
+
+    private fun updateRecordingInfo() {
+        val countText: TextView = findViewById(R.id.text_recording_count)
+        val lastText: TextView = findViewById(R.id.text_last_recording)
+
+        val recordingsDir = File(filesDir, "recordings")
+        val files = recordingsDir.listFiles()?.sortedByDescending { it.lastModified() }
+            ?: emptyList()
+
+        countText.text = "${files.size} recording${if (files.size != 1) "s" else ""}"
+
+        if (files.isNotEmpty()) {
+            val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
+            lastText.text = "Last: ${dateFormat.format(Date(files[0].lastModified()))}"
+        } else {
+            lastText.text = "No recordings yet"
+        }
     }
 
     private fun updateRecordingUi(button: Button, isRecording: Boolean) {
