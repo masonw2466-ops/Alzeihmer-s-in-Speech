@@ -8,7 +8,11 @@
 
 ## Demo
 
-<!-- Add screenshots or a demo GIF here -->
+<div align="center">
+
+https://github.com/user-attachments/assets/9ce12e2d-63b7-4482-bb78-a033124ceef2
+
+</div>
 
 ---
 
@@ -17,7 +21,7 @@
 | Feature | Description |
 |---------|-------------|
 | **Voice Recording** | One-tap audio recording with `.m4a` output using MediaRecorder for high-quality captures. |
-| **Offline Transcription** | Automatic speech-to-text powered by Vosk, an open-source offline recognition engine — no internet required. |
+| **Offline Transcription** | Automatic speech-to-text powered by Vosk, an open-source offline recognition engine, no internet required. |
 | **Recording Management** | Browse, play back, and review all saved recordings with a built-in audio player and progress tracking. |
 | **Transcript Viewer** | View full transcriptions alongside audio playback with seek controls. |
 | **Medical Profile** | Store detailed medical information including personal data, medications, allergies, and physician contacts. |
@@ -51,7 +55,7 @@ This is an Android Studio project built with Kotlin and Gradle.
 3. Build the app: `./gradlew assembleDebug`
 4. Install on a connected device: `./gradlew installDebug`
 
-**Note:** Speech transcription requires microphone access. On emulators, concurrent microphone use between MediaRecorder and Vosk may not work — testing on a physical device is recommended.
+**Note:** Speech transcription requires microphone access. On emulators, concurrent microphone use between MediaRecorder and Vosk may not work, testing on a physical device is recommended.
 
 ---
 
@@ -102,7 +106,7 @@ Alzeihmer-s-in-Speech/
 
 ## License
 
-This project is distributed under the **MIT License**.
+This project was built during the Senior Capstone class at **Southern Utah University**.
 
 ---
 
