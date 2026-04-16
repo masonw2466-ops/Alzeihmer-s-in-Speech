@@ -112,8 +112,8 @@ This project was built during the Senior Capstone class at **Southern Utah Unive
 
 ## Team
 
+- **Abbie Pitts**
 - **Adrian Ninanya**
 - **Mason Williams**
 - **Connor Spendlove**
 - **Ethan Thompson**
-- **Abbie Pitts**
